@@ -406,3 +406,29 @@ a:hover { text-decoration: underline; }
 
 /* Pastikan konten tidak tertutup bar */
 .page-wrapper { padding-bottom: 120px; }
+
+/* ── Floating Action Button (FAB) ── */
+.fab-btn {
+    position: fixed;
+    bottom: 90px; /* Posisi di atas navigasi bawah */
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%; /* Membuatnya bulat sempurna */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 300;
+    text-decoration: none;
+    box-shadow: 0 4px 15px var(--accent-glow);
+    z-index: 9998; /* Di bawah bottom-nav agar aman */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fab-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
