@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Agenda</title>
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="page-header">
+        <div class="page-title-wrap">
+            <div class="eyebrow">Manajemen Tugas</div>
+            <h1>Dashboard Agenda</h1>
+        </div>
+        <a href="tambah-agenda.html" class="add-btn">
+            <span>＋</span> Tambah Agenda
+        </a>
+    </div>
+
+    <!-- Progress Card -->
+    <div class="card" style="margin-bottom:24px;">
+        <div class="progress-header">
+            <strong>Progress Penyelesaian</strong>
+            <span id="percentText">0%</span>
+        </div>
+        <div class="progress-wrapper">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">⚪</div>
+            <div id="countBelum" class="stat-number">0</div>
+            <div class="stat-label">Belum Mulai</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">⏳</div>
+            <div id="countProgres" class="stat-number">0</div>
+            <div class="stat-label">Sedang Jalan</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <div id="countSelesai" class="stat-number">0</div>
+            <div class="stat-label">Selesai</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-icon">❌</div>
+            <div id="countBatal" class="stat-number" style="background: linear-gradient(135deg, #94A3B8, #475569); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">0</div>
+            <div class="stat-label">Dibatalkan</div>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" data-type="aktif" onclick="switchTab('aktif')">📋 Tugas Aktif</button>
+        <button class="tab-btn" data-type="selesai" onclick="switchTab('selesai')">🏁 Riwayat</button>
+    </div>
+
+    <!-- Agenda List -->
+    <div class="section-label">Daftar Agenda</div>
+    <div id="agenda-container">
+        <div class="empty-state">
+            <div class="empty-icon">🔄</div>
+            <p>Sedang memuat data…</p>
+        </div>
+    </div>
+
+</div>
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+
+<nav class="bottom-nav">
+    <a href="index.html" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        <span>Dashboard</span>
+    </a>
+    <a href="kalender.html" class="nav-item">
+        <span class="nav-icon">📅</span>
+        <span>Kalender</span>
+    </a>
+</nav>
+</body>
+</html>
